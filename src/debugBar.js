@@ -5,9 +5,9 @@ Crafty.extend({
     */
     debugBar : {
         show : function(){
-            var body = document.getElementsByTagName('body')[0];
+            var body = $('body');
 
-            body.innerHTML += this._generateTemplate();
+            body.append(this._generateTemplate());
         },
 
         _generateTemplate : function(){
@@ -18,7 +18,7 @@ Crafty.extend({
                                 '#crafty-debug ul.menu li:hover {box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px; background-color: #FFFFFF}'+
                                 '#crafty-debug ul.menu li a{padding: 10px;padding-top: 15px;padding-bottom: 10px; color: #2F2F2F; display:block; text-decoration: none}'+
                                 '#crafty-debug ul.menu li.version{font-weight: bold}'+
-                                '#crafty-debug #entities-box{position: fixed;left: 79px;bottom: 38px;height: 145px;width: 500px;border: 1px solid #BBB;padding: 10px;}'+
+                                '#crafty-debug #entities-box{position: fixed;left: 79px;bottom: 38px;height: 145px;width: 500px;border: 1px solid #BBB;padding: 10px; display:none;}'+
                                 '#crafty-debug #entities-box .list{height: 145px;width: 150px;}'+
                                 '#crafty-debug #entities-box .list ul{height: 105px;width: 150px;border-right: 1px solid #BBB;overflow-y: scroll; padding-left: 10px;list-style-type: none;padding-right: 10px;}'+
                                 '#crafty-debug #entities-box .list ul li{}'+
@@ -49,7 +49,6 @@ Crafty.extend({
         },
 
         listEntities : function (filter) {
-            console.log(filter);
             if(filter == '') {
                 filter = '*';
             }
@@ -101,15 +100,24 @@ Crafty.extend({
 });
 
 Crafty.bind('Load', function () {
-    var entitiesBoxList = document.getElementById('entities-box-list'),
-        entitiesSearch = document.getElementById('entities-search');
+    var entitiesBoxList = $('#entities-box-list'),
+        entitiesSearch = $('#entities-search');
 
     setTimeout(function(){
-        entitiesBoxList.innerHTML = Crafty.debugBar.renderEntitesList(Crafty.debugBar.listEntities('*'));
+        entitiesBoxList.html(Crafty.debugBar.renderEntitesList(Crafty.debugBar.listEntities('*')));
     }, 1000);
 
-    entitiesSearch.addEventListener('keyup', function(){
-        entitiesBoxList.innerHTML = Crafty.debugBar.renderEntitesList(Crafty.debugBar.listEntities(this.value));
-    }, false);
+    entitiesSearch.keyup(function(){
+        entitiesBoxList.html(Crafty.debugBar.renderEntitesList(Crafty.debugBar.listEntities($(this).val())));
+    });
+
+    $('#crafty-debug ul.menu li.entities').click(function(){
+        if ($('#entities-box').is(':visible')) {
+            $('#entities-box').hide();
+        } else {
+            $('#entities-box').show();
+        }
+    });
+
 });
 
