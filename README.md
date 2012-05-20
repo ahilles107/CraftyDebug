@@ -1,0 +1,4 @@
+CraftyDebug
+===========
+
+Crafty Debug component
