@@ -8,6 +8,7 @@ Crafty.scene("main", function() {
 	//when everything is loaded, run the main scene
 	require(elements, function() {	   
 		sc['ufo'] = new Ufo();
+		sc['ufo'] = new Ufo();
 		infc['info'] = new Info();
 	});
 
