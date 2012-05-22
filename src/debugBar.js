@@ -40,6 +40,14 @@ Crafty.extend({
                                 '#crafty-debug #entities-box .properties .single {}'+
                                 '#crafty-debug #entities-box .properties .single label {display: block;width: 45px;float: left;padding-top: 6px;text-align: right;margin-right: 15px;font-weight:bold;}'+
                                 '#crafty-debug #entities-box .properties .single input{float:left; width: 50px; font-size: 11px;}'+
+
+                                '#crafty-debug #entities-box .components{height: 145px;width: 160px; float:left}'+
+                                '#crafty-debug #entities-box .components ul{height: 130px;width: 145px;overflow-y: scroll;padding-left: 5px;list-style-type: none;padding-right: 10px;font-size: 11px;margin-top: 0px;padding-top: 5px;}'+
+                                '#crafty-debug #entities-box .components ul li{border-bottom: 1px dashed #BBB;}'+
+                                '#crafty-debug #entities-box .components ul li a{float:left; padding: 3px 0px 3px 0px;color: #2F2F2F; display:block; text-decoration: none}'+
+                                '#crafty-debug #entities-box .components ul li a.remove {float:right; color: #b60d0d}'+
+                                '#crafty-debug #entities-box .components input.search{float:left;padding: 3px;width: 115px;margin: 5px auto 0px auto;font-size: 11px;display: block; border: 1px solid #BBB;}'+
+                                '#crafty-debug #entities-box .components .addComponent {padding: 8px 0px 8px 4px;float: left;cursor: pointer; margin-right:5px;}'+
                             '</style>'
                             ;
 
@@ -56,7 +64,10 @@ Crafty.extend({
                                         '</div>'+
                                         '<div class="components">'+
                                             '<div class="header">COMPONENTS<div class="separator"></div></div>'+
-                                            '<div class="content"></div>'+
+                                            '<div class="content" style="display:none">'+
+                                                '<ul id="components-box-list"></ul>'+
+                                                '<input id="entities-search" type="text" placeholder="add component" class="search" /><img data-entity-id="" class="addComponent" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA01pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlFRkFEQzc0QTM0MzExRTE5N0NBRjM2REEwOTczRjkzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlFRkFEQzc1QTM0MzExRTE5N0NBRjM2REEwOTczRjkzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OUVGQURDNzJBMzQzMTFFMTk3Q0FGMzZEQTA5NzNGOTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OUVGQURDNzNBMzQzMTFFMTk3Q0FGMzZEQTA5NzNGOTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz617/6bAAAA3klEQVR42pySMQ6CQBBFh41HUA5gBZWFRg0HUdRwOgqjrYdAEi2sqLDUBPUCFugfM2s2BsLKTx7JZv+fHXbH8TyPDCkwBwswBT1wA3uwBhtQarNjhPtgC4ZUryOYgbM+SQeThiDJfiL+T1hJOy7ZyRW/4mAIRlWuLMvqCrA/5HBE7RSpulMtNODbflm2Sr7vm8tnB5876FYZuNBPwNSD2z60bPvE4bhlOOZ/5gLpnxfH3U6UzCq/dWEZLMRf6vHMQSCzSw2zHYj/O9u6wBgswQ5c+DnAVdYr2c914C3AANvWMQe07pynAAAAAElFTkSuQmCC" />'+
+                                            '</div>'+                                            
                                         '</div>'+
                                         '<div class="options">'+
                                             '<div class="header">OPTIONS<div class="separator"></div></div>'+
@@ -136,7 +147,12 @@ Crafty.extend({
         },
 
         renderEntityDetails : function(entity) {
-            var template = '<div class="attributes" data-ent="'+entity[0]+'">'+
+            Crafty.debugBar.renderEntityAttributes(entity);
+            Crafty.debugBar.renderEntityComponents(entity);
+        },
+
+        renderEntityAttributes : function(entity) {
+             var template = '<div class="attributes" data-ent="'+entity[0]+'">'+
                                 '<div class="single"><label>x</label><input data-type="'+typeof(entity['x'])+'" type="text" name="x" value="'+entity.attr('x')+'" /><div class="clear"></div></div>'+
                                 '<div class="single"><label>y</label><input data-type="'+typeof(entity['y'])+'" type="text" name="y" value="'+entity.attr('y')+'" /><div class="clear"></div></div>'+
                                 '<div class="single"><label>w</label><input data-type="'+typeof(entity['w'])+'" type="text" name="w" value="'+entity.attr('w')+'" /><div class="clear"></div></div>'+
@@ -144,14 +160,26 @@ Crafty.extend({
                                 '<div class="single"><label>z</label><input data-type="'+typeof(entity['z'])+'" type="text" name="z" value="'+entity.attr('z')+'" /><div class="clear"></div></div>'+
                                 '<div class="single"><label>rotation</label><input data-type="'+typeof(entity['rotation'])+'"  type="text" name="rotation" value="'+entity.attr('rotation')+'" /><div class="clear"></div></div>'+
                                 '<div class="single"><label>alpha</label><input data-type="'+typeof(entity['alpha'])+'"  type="text" name="alpha" value="'+entity.attr('alpha')+'" /><div class="clear"></div></div>'+
-                            '</div>'
-                                ;
+                            '</div>';
 
-            return template;
+            $('#crafty-debug #entities-box .properties .content').html(template);
+        },
+
+        renderEntityComponents : function(entity) {
+            var components = [];
+            //var avaiableComponents = Crafty.components();
+            var entityComponents = entity.__c;
+
+            for (i in entityComponents) {
+                components.push('<li><a href="#" data-comp="'+i+'">'+i+'</a><a href="#" data-entity-id="'+entity[0]+'" data-comp="'+i+'" class="remove">x</a><div class="clear"></div></li>');
+            }
+
+            $('#entities-box .content .components .addComponent').data('entityId', entity[0]);
+            $('#entities-box .content .components .content').show();
+            $('#entities-box .content .components .content #components-box-list').html(components.join(''));
         },
 
         elementToTypedValue : function (element) {
-            console.log(element, element.val())
             if (element.data('type') == "number") {
                 return parseFloat(element.val());
             } else {
@@ -182,9 +210,23 @@ Crafty.bind('Load', function () {
     });
 
     $('#crafty-debug #entities-box .list ul li a').live('click', function(){
-        var id = $(this).data('ent');
+        Crafty.debugBar.renderEntityDetails(Crafty($(this).data('ent')));
+    });
 
-        $('#crafty-debug #entities-box .properties .content').html(Crafty.debugBar.renderEntityDetails(Crafty(id)));
+    $('#crafty-debug #entities-box .components ul li a.remove').live('click', function(){
+        var component = $(this).data('comp'),
+            entity = $(this).data('entityId');
+        Crafty(entity).removeComponent(component);
+        Crafty.debugBar.renderEntityComponents(Crafty(entity));
+    });
+
+    $('#crafty-debug #entities-box .components .addComponent').live('click', function(){
+        var component = $('#crafty-debug #entities-box .components input.search').val(),
+            entity = $(this).data('entityId');
+
+        Crafty(entity).addComponent(component);
+        component = $('#crafty-debug #entities-box .components input.search').val('');
+        Crafty.debugBar.renderEntityComponents(Crafty(entity));
     });
 
     $('#crafty-debug #entities-box .properties .content input').live('keyup', function(){
