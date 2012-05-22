@@ -179,6 +179,15 @@ Crafty.extend({
             $('#entities-box .content .components .content #components-box-list').html(components.join(''));
         },
 
+        addEntityComponent : function(el) {
+            var component = $('#crafty-debug #entities-box .components input.search').val(),
+            entity = $(el).data('entityId');
+
+            Crafty(entity).addComponent(component);
+            component = $('#crafty-debug #entities-box .components input.search').val('');
+            Crafty.debugBar.renderEntityComponents(Crafty(entity));
+        },
+
         elementToTypedValue : function (element) {
             if (element.data('type') == "number") {
                 return parseFloat(element.val());
@@ -220,14 +229,20 @@ Crafty.bind('Load', function () {
         Crafty.debugBar.renderEntityComponents(Crafty(entity));
     });
 
-    $('#crafty-debug #entities-box .components .addComponent').live('click', function(){
-        var component = $('#crafty-debug #entities-box .components input.search').val(),
-            entity = $(this).data('entityId');
 
-        Crafty(entity).addComponent(component);
-        component = $('#crafty-debug #entities-box .components input.search').val('');
-        Crafty.debugBar.renderEntityComponents(Crafty(entity));
+    /* Components mangement */
+    $('#crafty-debug #entities-box .components .addComponent').live('click', function(){
+        Crafty.debugBar.addEntityComponent(this);
     });
+
+    $('#crafty-debug #entities-box .components input.search').keypress(function(event) {
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            Crafty.debugBar.addEntityComponent($('#crafty-debug #entities-box .components .addComponent'));
+        }        
+    });
+
+    /* Properties mangement */
 
     $('#crafty-debug #entities-box .properties .content input').live('keyup', function(){
         var attr = $(this).attr('name'),
