@@ -36,10 +36,15 @@ Crafty.extend({
                                 '#crafty-debug #entities-box .components{height: 190px;width: 130px;float: left;margin-left: 10px;color: #282828;}'+
                                 '#crafty-debug #entities-box .components .content{padding-left: 10px;}'+
                                 '#crafty-debug #entities-box .options{height: 190px;width: 130px;float: left;margin-left: 10px;color: #282828;}'+
-                                '#crafty-debug #entities-box .options .content{padding-left: 10px;}'+
+                                '#crafty-debug #entities-box .options .content{padding-left: 10px; padding-top: 30px;}'+
                                 '#crafty-debug #entities-box .properties .single {}'+
                                 '#crafty-debug #entities-box .properties .single label {display: block;width: 45px;float: left;padding-top: 6px;text-align: right;margin-right: 15px;font-weight:bold;}'+
                                 '#crafty-debug #entities-box .properties .single input{float:left; width: 50px; font-size: 11px;}'+
+                                '#crafty-debug .btn{text-align: center; color: #FFFFFF;padding:2px; margin:5px 0px; cursor:pointer;}'+
+                                '#crafty-debug .btn-red{border:1px solid #b90707; background: #d54848; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI4JSIgc3RvcC1jb2xvcj0iI2Q1NDg0OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjglIiBzdG9wLWNvbG9yPSIjY2UyMDIwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjY2EwZjBmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==); background: -moz-linear-gradient(top,  #d54848 8%, #ce2020 8%, #ca0f0f 99%); background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#d54848), color-stop(8%,#ce2020), color-stop(99%,#ca0f0f)); background: -webkit-linear-gradient(top,  #d54848 8%,#ce2020 8%,#ca0f0f 99%); background: -o-linear-gradient(top,  #d54848 8%,#ce2020 8%,#ca0f0f 99%); background: -ms-linear-gradient(top,  #d54848 8%,#ce2020 8%,#ca0f0f 99%); background: linear-gradient(top,  #d54848 8%,#ce2020 8%,#ca0f0f 99%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#d54848", endColorstr="#ca0f0f",GradientType=0 ); }'+
+                                '#crafty-debug .btn-black{border:1px solid #000000; background: #505050; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2JSIgc3RvcC1jb2xvcj0iIzUwNTA1MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYlIiBzdG9wLWNvbG9yPSIjMjcyNzI3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzIwMjAyMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=); background: -moz-linear-gradient(top,  #505050 6%, #272727 6%, #202020 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,#505050), color-stop(6%,#272727), color-stop(100%,#202020)); background: -webkit-linear-gradient(top,  #505050 6%,#272727 6%,#202020 100%); background: -o-linear-gradient(top,  #505050 6%,#272727 6%,#202020 100%); background: -ms-linear-gradient(top,  #505050 6%,#272727 6%,#202020 100%); background: linear-gradient(top,  #505050 6%,#272727 6%,#202020 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#505050", endColorstr="#202020",GradientType=0 ); }'+
+                                '#crafty-debug .btn-black.off{border:1px solid #616161; background: #bebebe; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI3JSIgc3RvcC1jb2xvcj0iI2JlYmViZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjYWVhZWFlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2EzYTNhMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=); background: -moz-linear-gradient(top,  #bebebe 7%, #aeaeae 7%, #a3a3a3 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(7%,#bebebe), color-stop(7%,#aeaeae), color-stop(100%,#a3a3a3)); background: -webkit-linear-gradient(top,  #bebebe 7%,#aeaeae 7%,#a3a3a3 100%); background: -o-linear-gradient(top,  #bebebe 7%,#aeaeae 7%,#a3a3a3 100%); background: -ms-linear-gradient(top,  #bebebe 7%,#aeaeae 7%,#a3a3a3 100%); background: linear-gradient(top,  #bebebe 7%,#aeaeae 7%,#a3a3a3 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#bebebe", endColorstr="#a3a3a3",GradientType=0 ); }'+
+                                '#crafty-debug #entities-box .options .content .btn{width:120px; height:15px;}'+
                             '</style>'
                             ;
 
@@ -150,6 +155,17 @@ Crafty.extend({
             return template;
         },
 
+        renderEntityOptions : function(entity){
+            var template = '<div class="attributes" data-ent="'+entity[0]+'">'+
+                                '<div class="btn btn-black draggable '+(entity.__c.draggable ? 'off' : '') +'">draggable '+(entity.__c.draggable ? 'off' : 'on')+'</div>'+
+                                '<div class="btn btn-black visible '+ (entity.visible ? '' : 'off')+'">'+ (entity.visible ? 'hide' : 'show')+'</div>'+
+                                '<div class="btn btn-black console">print to console</div>'+
+//                                '<div class="btn btn-black hitBox '+(entity.__c.hitBox ? 'off' : '') +'">hit box '+(entity.__c.hitBox ? 'off' : 'on') +'</div>'+
+                                '<div class="btn btn-red remove">remove</div>'+
+                            '</div>';
+            return template;
+        },
+
         elementToTypedValue : function (element) {
             console.log(element, element.val())
             if (element.data('type') == "number") {
@@ -176,8 +192,10 @@ Crafty.bind('Load', function () {
     $('#crafty-debug ul.menu li.entities').click(function(){
         if ($('#entities-box').is(':visible')) {
             $('#entities-box').hide();
+            $('#entities-box .options .content').hide();
         } else {
             $('#entities-box').show();
+            $('#entities-box .options .content').show();
         }
     });
 
@@ -185,13 +203,69 @@ Crafty.bind('Load', function () {
         var id = $(this).data('ent');
 
         $('#crafty-debug #entities-box .properties .content').html(Crafty.debugBar.renderEntityDetails(Crafty(id)));
+        $('#crafty-debug #entities-box .options .content').html(Crafty.debugBar.renderEntityOptions(Crafty(id)));
     });
+
+    $('#crafty-debug #entities-box .list ul li a').live('click', function(){
+        var id = $(this).data('ent');
+
+        $('#crafty-debug #entities-box .properties .content').html(Crafty.debugBar.renderEntityDetails(Crafty(id)));
+        $('#crafty-debug #entities-box .options .content').html(Crafty.debugBar.renderEntityOptions(Crafty(id)));
+    });
+
 
     $('#crafty-debug #entities-box .properties .content input').live('keyup', function(){
         var attr = $(this).attr('name'),
             entity = $(this).parent().parent();
         
         Crafty(entity.data('ent')).attr(attr ,Crafty.debugBar.elementToTypedValue($(this)));
+    });
+
+    $('#crafty-debug #entities-box .options .draggable').live('click', function(){
+        var id = $(this).parent().data('ent'),
+            entity = Crafty(id),
+            btn = $(this);
+
+        if (btn.hasClass('off')){
+            entity.removeComponent('Draggable', false);
+            btn.removeClass('off');
+            btn.html('draggable on');
+            console.log(entity);
+        } else {
+            entity.addComponent('Draggable');
+            btn.addClass('off');
+            btn.html('draggable off');
+            console.log(entity);
+        }
+    });
+
+    $('#crafty-debug #entities-box .options .visible').live('click', function(){
+        var id = $(this).parent().data('ent'),
+            entity = Crafty(id),
+            btn = $(this);
+        if (btn.hasClass('off')){
+            entity.visible = true;
+            btn.removeClass('off');
+            btn.html('hide');
+        } else {
+            entity.visible = false;
+            btn.addClass('off');
+            btn.html('show');
+        } 
+    });
+
+    $('#crafty-debug #entities-box .options .console').live('click', function(){
+        var entity = $(this).parent().data('ent');
+        console.log(Crafty(entity));
+    });
+
+    $('#crafty-debug #entities-box .options .remove').live('click', function(){
+        var entity = $(this).parent().data('ent');
+        Crafty(entity).destroy();
+        entitiesBoxList.html(Crafty.debugBar.renderEntitesList(Crafty.debugBar.listEntities('*')));
+
+        $('#crafty-debug #entities-box .properties .content').html('');
+        $('#crafty-debug #entities-box .options .content').html('');
     });
 
 });
