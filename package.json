@@ -14,11 +14,11 @@
     ],
     "description": "With Crafty Debug Bar you can easily manipulate entities on the game screen, and much more soon.",
     "keywords": [
-        "debug",
+        "debug"
     ],
     "jsfiddle" : "disable",
     "homepage": "http://craftycomponents.com",
     "files": [
-        "src/debugBar.js",
+        "src/debugBar.js"
     ]
 }
