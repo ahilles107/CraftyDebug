@@ -1,0 +1,24 @@
+{
+    "name": "Crafty Debug Bar",
+    "version": "0.8",
+    "title": "Debug bar for Crafty games",
+    "author": {
+        "name": "Fly With Monkey",
+        "url": "http://flywithmonkey.com/"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ],
+    "description": "With Crafty Debug Bar you can easily manipulate entities on the game screen, and much more soon.",
+    "keywords": [
+        "debug",
+    ],
+    "jsfiddle" : "disable",
+    "homepage": "http://craftycomponents.com",
+    "files": [
+        "src/debugBar.js",
+    ]
+}
