@@ -36,11 +36,10 @@ Crafty.extend({
                                 '#crafty-debug #entities-box .components{height: 190px;width: 130px;float: left;margin-left: 10px;color: #282828;}'+
                                 '#crafty-debug #entities-box .components .content{padding-left: 10px;}'+
                                 '#crafty-debug #entities-box .options{height: 190px;width: 130px;float: left;margin-left: 10px;color: #282828;}'+
-                                '#crafty-debug #entities-box .options .content{padding-left: 10px;}'+
+                                '#crafty-debug #entities-box .options .content{padding-left: 10px; padding-top: 30px;}'+
                                 '#crafty-debug #entities-box .properties .single {}'+
                                 '#crafty-debug #entities-box .properties .single label {display: block;width: 45px;float: left;padding-top: 6px;text-align: right;margin-right: 15px;font-weight:bold;}'+
                                 '#crafty-debug #entities-box .properties .single input{float:left; width: 50px; font-size: 11px;}'+
-
                                 '#crafty-debug #entities-box .components{height: 145px;width: 160px; float:left}'+
                                 '#crafty-debug #entities-box .components ul{height: 130px;width: 145px;overflow-y: scroll;padding-left: 5px;list-style-type: none;padding-right: 10px;font-size: 11px;margin-top: 0px;padding-top: 5px;}'+
                                 '#crafty-debug #entities-box .components ul li{border-bottom: 1px dashed #BBB;}'+
@@ -48,6 +47,11 @@ Crafty.extend({
                                 '#crafty-debug #entities-box .components ul li a.remove {float:right; color: #b60d0d}'+
                                 '#crafty-debug #entities-box .components input.search{float:left;padding: 3px;width: 115px;margin: 5px auto 0px auto;font-size: 11px;display: block; border: 1px solid #BBB;}'+
                                 '#crafty-debug #entities-box .components .addComponent {padding: 8px 0px 8px 4px;float: left;cursor: pointer; margin-right:5px;}'+
+                                '#crafty-debug .btn{text-align: center; color: #FFFFFF;padding:2px; margin:5px 0px; cursor:pointer;}'+
+                                '#crafty-debug .btn-red{border:1px solid #b90707; background: #d54848; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI4JSIgc3RvcC1jb2xvcj0iI2Q1NDg0OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjglIiBzdG9wLWNvbG9yPSIjY2UyMDIwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjY2EwZjBmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==); background: -moz-linear-gradient(top,  #d54848 8%, #ce2020 8%, #ca0f0f 99%); background: -webkit-gradient(linear, left top, left bottom, color-stop(8%,#d54848), color-stop(8%,#ce2020), color-stop(99%,#ca0f0f)); background: -webkit-linear-gradient(top,  #d54848 8%,#ce2020 8%,#ca0f0f 99%); background: -o-linear-gradient(top,  #d54848 8%,#ce2020 8%,#ca0f0f 99%); background: -ms-linear-gradient(top,  #d54848 8%,#ce2020 8%,#ca0f0f 99%); background: linear-gradient(top,  #d54848 8%,#ce2020 8%,#ca0f0f 99%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#d54848", endColorstr="#ca0f0f",GradientType=0 ); }'+
+                                '#crafty-debug .btn-black{border:1px solid #000000; background: #505050; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2JSIgc3RvcC1jb2xvcj0iIzUwNTA1MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYlIiBzdG9wLWNvbG9yPSIjMjcyNzI3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzIwMjAyMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=); background: -moz-linear-gradient(top,  #505050 6%, #272727 6%, #202020 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,#505050), color-stop(6%,#272727), color-stop(100%,#202020)); background: -webkit-linear-gradient(top,  #505050 6%,#272727 6%,#202020 100%); background: -o-linear-gradient(top,  #505050 6%,#272727 6%,#202020 100%); background: -ms-linear-gradient(top,  #505050 6%,#272727 6%,#202020 100%); background: linear-gradient(top,  #505050 6%,#272727 6%,#202020 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#505050", endColorstr="#202020",GradientType=0 ); }'+
+                                '#crafty-debug .btn-black.off{border:1px solid #616161; background: #bebebe; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI3JSIgc3RvcC1jb2xvcj0iI2JlYmViZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjYWVhZWFlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2EzYTNhMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=); background: -moz-linear-gradient(top,  #bebebe 7%, #aeaeae 7%, #a3a3a3 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(7%,#bebebe), color-stop(7%,#aeaeae), color-stop(100%,#a3a3a3)); background: -webkit-linear-gradient(top,  #bebebe 7%,#aeaeae 7%,#a3a3a3 100%); background: -o-linear-gradient(top,  #bebebe 7%,#aeaeae 7%,#a3a3a3 100%); background: -ms-linear-gradient(top,  #bebebe 7%,#aeaeae 7%,#a3a3a3 100%); background: linear-gradient(top,  #bebebe 7%,#aeaeae 7%,#a3a3a3 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#bebebe", endColorstr="#a3a3a3",GradientType=0 ); }'+
+                                '#crafty-debug #entities-box .options .content .btn{width:120px; height:15px;}'+
                             '</style>'
                             ;
 
@@ -84,11 +88,11 @@ Crafty.extend({
                                     '<div class="separator"></div>'+
                                     '<li class="bar-item graph" data-item="graph"><a href="#"><img style="padding: 6px 8px 8px 0px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAQCAYAAAD0xERiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA01pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkVERDBEQjZEQTM0MjExRTE5Qzg5RkMzOTVDNzIyOEVEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkVERDBEQjZFQTM0MjExRTE5Qzg5RkMzOTVDNzIyOEVEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RUREMERCNkJBMzQyMTFFMTlDODlGQzM5NUM3MjI4RUQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RUREMERCNkNBMzQyMTFFMTlDODlGQzM5NUM3MjI4RUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5ftyAMAAAAM0lEQVR42mL8//8/AxaALsjIQARgYqAiGCGGsZAb2NgianB7kywvYQuO0XQ2ahgOABBgAAU5ByC5p5YEAAAAAElFTkSuQmCC" /><div class="text">Graph</div><div class="clear"></div></a></li>'+
                                     '<div class="separator"></div>'+
-                                    '<div class="frames">'+
-                                        '<li class="bar-item play" data-item="play"><a href="#"><img style="padding: 6px 8px 8px 0px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAQCAYAAAAvf+5AAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA01pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkY3REEyMDVDQTM0MjExRTFBNTBEODZDQTk1NDJCQkFFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkY3REEyMDVEQTM0MjExRTFBNTBEODZDQTk1NDJCQkFFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjdEQTIwNUFBMzQyMTFFMUE1MEQ4NkNBOTU0MkJCQUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjdEQTIwNUJBMzQyMTFFMUE1MEQ4NkNBOTU0MkJCQUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7poMa/AAAAHUlEQVR42mL8DwQMqIARSqOIM44qHFVIe4UAAQYAUI5P0QnNe/0AAAAASUVORK5CYII=" /><div class="text">Play</div><div class="clear"></div></a></li>'+
-                                        '<li class="bar-item pause" data-item="pause"><a href="#"><img style="padding: 6px 8px 8px 0px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAQCAYAAAAvf+5AAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA01pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkY3REEyMDVDQTM0MjExRTFBNTBEODZDQTk1NDJCQkFFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkY3REEyMDVEQTM0MjExRTFBNTBEODZDQTk1NDJCQkFFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjdEQTIwNUFBMzQyMTFFMUE1MEQ4NkNBOTU0MkJCQUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjdEQTIwNUJBMzQyMTFFMUE1MEQ4NkNBOTU0MkJCQUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7poMa/AAAAHUlEQVR42mL8DwQMqIARSqOIM44qHFVIe4UAAQYAUI5P0QnNe/0AAAAASUVORK5CYII=" /><div class="text">Pause</div><div class="clear"></div></a></li>'+
-                                        '<li class="bar-item frame" data-item="frame"><a href="#"><img style="padding: 6px 8px 8px 0px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA01pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAwRTFEMDA1QTM0MzExRTE4REU2OTU4OUVCOUVCRUJGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAwRTFEMDA2QTM0MzExRTE4REU2OTU4OUVCOUVCRUJGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDBFMUQwMDNBMzQzMTFFMThERTY5NTg5RUI5RUJFQkYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDBFMUQwMDRBMzQzMTFFMThERTY5NTg5RUI5RUJFQkYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz75G/w3AAAAV0lEQVR42mL8//8/Aw6AUwIGGHFpVlBQwKv5wYMHDEwMFAB0mwk6FegiuM0s2CTwORUZUORsFmSnoptMyEUU2Uyxs0kCQK8xDryzQYnkPzHqBpdmgAADAKzfJ6rbwMyYAAAAAElFTkSuQmCC" /><div class="text">Frame</div><div class="clear"></div></a></li>'+
-                                    '</div>'+
+                                //    '<div class="frames">'+
+                                //        '<li class="bar-item play" data-item="play"><a href="#"><img style="padding: 6px 8px 8px 0px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAQCAYAAAAvf+5AAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA01pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkY3REEyMDVDQTM0MjExRTFBNTBEODZDQTk1NDJCQkFFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkY3REEyMDVEQTM0MjExRTFBNTBEODZDQTk1NDJCQkFFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjdEQTIwNUFBMzQyMTFFMUE1MEQ4NkNBOTU0MkJCQUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjdEQTIwNUJBMzQyMTFFMUE1MEQ4NkNBOTU0MkJCQUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7poMa/AAAAHUlEQVR42mL8DwQMqIARSqOIM44qHFVIe4UAAQYAUI5P0QnNe/0AAAAASUVORK5CYII=" /><div class="text">Play</div><div class="clear"></div></a></li>'+
+                                //        '<li class="bar-item pause" data-item="pause"><a href="#"><img style="padding: 6px 8px 8px 0px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAQCAYAAAAvf+5AAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA01pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkY3REEyMDVDQTM0MjExRTFBNTBEODZDQTk1NDJCQkFFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkY3REEyMDVEQTM0MjExRTFBNTBEODZDQTk1NDJCQkFFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjdEQTIwNUFBMzQyMTFFMUE1MEQ4NkNBOTU0MkJCQUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjdEQTIwNUJBMzQyMTFFMUE1MEQ4NkNBOTU0MkJCQUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7poMa/AAAAHUlEQVR42mL8DwQMqIARSqOIM44qHFVIe4UAAQYAUI5P0QnNe/0AAAAASUVORK5CYII=" /><div class="text">Pause</div><div class="clear"></div></a></li>'+
+                                //        '<li class="bar-item frame" data-item="frame"><a href="#"><img style="padding: 6px 8px 8px 0px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA01pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAwRTFEMDA1QTM0MzExRTE4REU2OTU4OUVCOUVCRUJGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAwRTFEMDA2QTM0MzExRTE4REU2OTU4OUVCOUVCRUJGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDBFMUQwMDNBMzQzMTFFMThERTY5NTg5RUI5RUJFQkYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDBFMUQwMDRBMzQzMTFFMThERTY5NTg5RUI5RUJFQkYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz75G/w3AAAAV0lEQVR42mL8//8/Aw6AUwIGGHFpVlBQwKv5wYMHDEwMFAB0mwk6FegiuM0s2CTwORUZUORsFmSnoptMyEUU2Uyxs0kCQK8xDryzQYnkPzHqBpdmgAADAKzfJ6rbwMyYAAAAAElFTkSuQmCC" /><div class="text">Frame</div><div class="clear"></div></a></li>'+
+                                //    '</div>'+
                                 '</ul>'+
                                 entitiesBox+
                             '</div>'
@@ -97,158 +101,230 @@ Crafty.extend({
             return styles + template;
         },
 
-        listEntities : function (filter) {
-            if(filter == '') {
-                filter = '*';
-            }
-
-            var entities = [];
-            //This is a number check in the scary world of JS
-            isID = !isNaN(parseFloat(filter)) && isFinite(filter);
-
-            // Save ids of single or many components.
-            if (isID) {
-                var e = Crafty(parseInt(filter));
-                entities.push({ id: e[0], e: e });
-            } else if (filter !== '*') {
-                var ids = Crafty(filter), count = 0;
-                for (i in ids) {
-                    if (count++ > 50) break;
-                    if (!(!isNaN(parseFloat(i)) && isFinite(i))) continue;
-                    e = Crafty(ids[i]);
-                    entities.push({ id: e[0], e: e });
+        utils : {
+            listEntities : function (filter) {
+                if(filter == '') {
+                    filter = '*';
                 }
-            } else if (filter == '*') {
-                var es = Crafty('*'), count = 0;
-                for (en in es) {
-                    if (es.hasOwnProperty(en) && typeof es[en] == "object") { 
-                        var e = es[en];
+
+                var entities = [],
+                    e,
+                    isNumber = function(filter){return !isNaN(parseFloat(filter)) && isFinite(filter)};
+
+                isID = isNumber(filter);
+
+                // Save ids of single or many components.
+                if (isID) {
+                    e = Crafty(parseInt(filter));
+                    entities.push({ id: e[0], e: e });
+                } else if (filter !== '*') {
+                    var ids = Crafty(filter), count = 0;
+                    for (i in ids) {
                         if (count++ < 50) {
+                            if (!isNumber(i)) {
+                                continue;
+                            };
+                            e = Crafty(ids[i]);
                             entities.push({ id: e[0], e: e });
                         }
                     }
-                };
+                } else if (filter == '*') {
+                    var es = Crafty('*'), count = 0;
+                    for (en in es) {
+                        if (es.hasOwnProperty(en) && typeof es[en] == "object") { 
+                            e = es[en];
+                            if (count++ < 50) {
+                                entities.push({ id: e[0], e: e });
+                            }
+                        }
+                    };
+                }
+
+                return entities;
+            },
+
+            addEntityComponent : function(el) {
+                var component = $('#crafty-debug #entities-box .components input.search').val(),
+                entity = $(el).data('entityId');
+
+                Crafty(entity).addComponent(component);
+                component = $('#crafty-debug #entities-box .components input.search').val('');
+                Crafty.debugBar.renders.renderEntityComponents(Crafty(entity));
+            },
+
+            elementToTypedValue : function (element) {
+                if (element.data('type') == "number") {
+                    return parseFloat(element.val());
+                } else {
+                    return element.val();
+                }
             }
-
-            return entities;
         },
 
-        renderEntitesList : function(listEntities) {
-            var elements = [];
+        renders : {
+            renderEntityDetails : function(entity) {
+                Crafty.debugBar.renders.renderEntityAttributes(entity);
+                Crafty.debugBar.renders.renderEntityComponents(entity);
+                Crafty.debugBar.renders.renderEntityOptions(entity);
+            },
 
-            if (listEntities.length == 0){
-                return '<h4>No results</h4>';
+            renderEntitesList : function(listEntities) {
+                var elements = [];
+
+                if (listEntities.length == 0){
+                    return '<h4>No results</h4>';
+                }
+
+                for (i in listEntities) {
+                    elements.push('<li><a href="#" data-ent="'+listEntities[i].id+'">'+listEntities[i].e._entityName+'</a></li>');
+                }
+                return elements.join('');
+            },
+            renderEntityAttributes : function(entity) {
+                 var template = '<div class="attributes" data-ent="'+entity[0]+'">'+
+                                    '<div class="single"><label>x</label><input data-type="'+typeof(entity['x'])+'" type="text" name="x" value="'+entity.attr('x')+'" /><div class="clear"></div></div>'+
+                                    '<div class="single"><label>y</label><input data-type="'+typeof(entity['y'])+'" type="text" name="y" value="'+entity.attr('y')+'" /><div class="clear"></div></div>'+
+                                    '<div class="single"><label>w</label><input data-type="'+typeof(entity['w'])+'" type="text" name="w" value="'+entity.attr('w')+'" /><div class="clear"></div></div>'+
+                                    '<div class="single"><label>h</label><input data-type="'+typeof(entity['h'])+'" type="text" name="h" value="'+entity.attr('h')+'" /><div class="clear"></div></div>'+
+                                    '<div class="single"><label>z</label><input data-type="'+typeof(entity['z'])+'" type="text" name="z" value="'+entity.attr('z')+'" /><div class="clear"></div></div>'+
+                                    '<div class="single"><label>rotation</label><input data-type="'+typeof(entity['rotation'])+'"  type="text" name="rotation" value="'+entity.attr('rotation')+'" /><div class="clear"></div></div>'+
+                                    '<div class="single"><label>alpha</label><input data-type="'+typeof(entity['alpha'])+'"  type="text" name="alpha" value="'+entity.attr('alpha')+'" /><div class="clear"></div></div>'+
+                                '</div>';
+
+                $('#crafty-debug #entities-box .properties .content').html(template);
+            },
+
+            renderEntityComponents : function(entity) {
+                var components = [];
+                //var avaiableComponents = Crafty.components();
+                var entityComponents = entity.__c;
+
+                for (i in entityComponents) {
+                    components.push('<li><a href="#" data-comp="'+i+'">'+i+'</a><a href="#" data-entity-id="'+entity[0]+'" data-comp="'+i+'" class="remove">x</a><div class="clear"></div></li>');
+                }
+
+                $('#entities-box .content .components .addComponent').data('entityId', entity[0]);
+                $('#entities-box .content .components .content').show();
+                $('#entities-box .content .components .content #components-box-list').html(components.join(''));
+            },
+
+            renderEntityOptions : function(entity){
+                var template = '<div class="attributes" data-ent="'+entity[0]+'">'+
+                                    '<div class="btn btn-black draggable '+(entity.__c.draggable ? 'off' : '') +'">draggable '+(entity.__c.draggable ? 'off' : 'on')+'</div>'+
+                                    '<div class="btn btn-black visible '+ (entity.visible ? '' : 'off')+'">'+ (entity.visible ? 'hide' : 'show')+'</div>'+
+                                    '<div class="btn btn-black console">print to console</div>'+
+    //                                '<div class="btn btn-black hitBox '+(entity.__c.hitBox ? 'off' : '') +'">hit box '+(entity.__c.hitBox ? 'off' : 'on') +'</div>'+
+                                    '<div class="btn btn-red remove">remove</div>'+
+                                '</div>';
+
+                $('#crafty-debug #entities-box .options .content').html(template);
             }
-
-            for (i in listEntities) {
-                elements.push('<li><a href="#" data-ent="'+listEntities[i].id+'">Entity: #'+listEntities[i].id+'</a></li>');
-            }
-            return elements.join('');
         },
-
-        renderEntityDetails : function(entity) {
-            Crafty.debugBar.renderEntityAttributes(entity);
-            Crafty.debugBar.renderEntityComponents(entity);
-        },
-
-        renderEntityAttributes : function(entity) {
-             var template = '<div class="attributes" data-ent="'+entity[0]+'">'+
-                                '<div class="single"><label>x</label><input data-type="'+typeof(entity['x'])+'" type="text" name="x" value="'+entity.attr('x')+'" /><div class="clear"></div></div>'+
-                                '<div class="single"><label>y</label><input data-type="'+typeof(entity['y'])+'" type="text" name="y" value="'+entity.attr('y')+'" /><div class="clear"></div></div>'+
-                                '<div class="single"><label>w</label><input data-type="'+typeof(entity['w'])+'" type="text" name="w" value="'+entity.attr('w')+'" /><div class="clear"></div></div>'+
-                                '<div class="single"><label>h</label><input data-type="'+typeof(entity['h'])+'" type="text" name="h" value="'+entity.attr('h')+'" /><div class="clear"></div></div>'+
-                                '<div class="single"><label>z</label><input data-type="'+typeof(entity['z'])+'" type="text" name="z" value="'+entity.attr('z')+'" /><div class="clear"></div></div>'+
-                                '<div class="single"><label>rotation</label><input data-type="'+typeof(entity['rotation'])+'"  type="text" name="rotation" value="'+entity.attr('rotation')+'" /><div class="clear"></div></div>'+
-                                '<div class="single"><label>alpha</label><input data-type="'+typeof(entity['alpha'])+'"  type="text" name="alpha" value="'+entity.attr('alpha')+'" /><div class="clear"></div></div>'+
-                            '</div>';
-
-            $('#crafty-debug #entities-box .properties .content').html(template);
-        },
-
-        renderEntityComponents : function(entity) {
-            var components = [];
-            //var avaiableComponents = Crafty.components();
-            var entityComponents = entity.__c;
-
-            for (i in entityComponents) {
-                components.push('<li><a href="#" data-comp="'+i+'">'+i+'</a><a href="#" data-entity-id="'+entity[0]+'" data-comp="'+i+'" class="remove">x</a><div class="clear"></div></li>');
-            }
-
-            $('#entities-box .content .components .addComponent').data('entityId', entity[0]);
-            $('#entities-box .content .components .content').show();
-            $('#entities-box .content .components .content #components-box-list').html(components.join(''));
-        },
-
-        addEntityComponent : function(el) {
-            var component = $('#crafty-debug #entities-box .components input.search').val(),
-            entity = $(el).data('entityId');
-
-            Crafty(entity).addComponent(component);
-            component = $('#crafty-debug #entities-box .components input.search').val('');
-            Crafty.debugBar.renderEntityComponents(Crafty(entity));
-        },
-
-        elementToTypedValue : function (element) {
-            if (element.data('type') == "number") {
-                return parseFloat(element.val());
-            } else {
-                return element.val();
-            }
-        }
     }
 });
 
 Crafty.bind('Load', function () {
-    var entitiesBoxList = $('#entities-box-list'),
-        entitiesSearch = $('#entities-search');
-
+    /* Entities mangement */
     setTimeout(function(){
-        entitiesBoxList.html(Crafty.debugBar.renderEntitesList(Crafty.debugBar.listEntities('*')));
+        $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities('*')));
     }, 1000);
 
-    entitiesSearch.keyup(function(){
-        entitiesBoxList.html(Crafty.debugBar.renderEntitesList(Crafty.debugBar.listEntities($(this).val())));
+    $('#entities-search').keyup(function(){
+        $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities($(this).val())));
     });
 
     $('#crafty-debug ul.menu li.entities').click(function(){
         if ($('#entities-box').is(':visible')) {
             $('#entities-box').hide();
+            $('#entities-box .options .content').hide();
         } else {
             $('#entities-box').show();
+            $('#entities-box .options .content').show();
         }
     });
 
     $('#crafty-debug #entities-box .list ul li a').live('click', function(){
-        Crafty.debugBar.renderEntityDetails(Crafty($(this).data('ent')));
+        Crafty.debugBar.renders.renderEntityDetails(Crafty($(this).data('ent')));
     });
 
     $('#crafty-debug #entities-box .components ul li a.remove').live('click', function(){
         var component = $(this).data('comp'),
             entity = $(this).data('entityId');
-        Crafty(entity).removeComponent(component);
-        Crafty.debugBar.renderEntityComponents(Crafty(entity));
+        Crafty(entity).removeComponent(component, false);
+        Crafty.debugBar.renders.renderEntityComponents(Crafty(entity));
     });
-
 
     /* Components mangement */
     $('#crafty-debug #entities-box .components .addComponent').live('click', function(){
-        Crafty.debugBar.addEntityComponent(this);
+        Crafty.debugBar.utils.addEntityComponent(this);
     });
 
     $('#crafty-debug #entities-box .components input.search').keypress(function(event) {
         if ( event.which == 13 ) {
             event.preventDefault();
-            Crafty.debugBar.addEntityComponent($('#crafty-debug #entities-box .components .addComponent'));
+            Crafty.debugBar.utils.addEntityComponent($('#crafty-debug #entities-box .components .addComponent'));
         }        
     });
 
-    /* Properties mangement */
-
+    /* Attributes mangement */
     $('#crafty-debug #entities-box .properties .content input').live('keyup', function(){
         var attr = $(this).attr('name'),
             entity = $(this).parent().parent();
         
-        Crafty(entity.data('ent')).attr(attr ,Crafty.debugBar.elementToTypedValue($(this)));
+        Crafty(entity.data('ent')).attr(attr, Crafty.debugBar.utils.elementToTypedValue($(this)));
+    });
+
+    /* Options mangement */
+    $('#crafty-debug #entities-box .options .draggable').live('click', function(){
+        var id = $(this).parent().data('ent'),
+            entity = Crafty(id),
+            btn = $(this);
+
+        if (btn.hasClass('off')){
+            entity.removeComponent('Draggable', false);
+            btn.removeClass('off');
+            btn.html('draggable on');
+            entity.unbind('Dragging');
+        } else {
+            entity.addComponent('Draggable');
+            btn.addClass('off');
+            btn.html('draggable off');
+
+            entity.bind('Dragging', function(e) {
+                Crafty.debugBar.renders.renderEntityAttributes(entity);
+            })
+        }
+
+        Crafty.debugBar.renders.renderEntityComponents(entity);
+    });
+
+    $('#crafty-debug #entities-box .options .visible').live('click', function(){
+        var id = $(this).parent().data('ent'),
+            entity = Crafty(id),
+            btn = $(this);
+        if (btn.hasClass('off')){
+            entity.visible = true;
+            btn.removeClass('off');
+            btn.html('hide');
+        } else {
+            entity.visible = false;
+            btn.addClass('off');
+            btn.html('show');
+        } 
+    });
+
+    $('#crafty-debug #entities-box .options .console').live('click', function(){
+        var entity = $(this).parent().data('ent');
+        console.log(Crafty(entity));
+    });
+
+    $('#crafty-debug #entities-box .options .remove').live('click', function(){
+        var entity = $(this).parent().data('ent');
+        Crafty(entity).destroy();
+        $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities('*')));
+
+        $('#crafty-debug #entities-box .properties .content').html('');
+        $('#crafty-debug #entities-box .options .content').html('');
     });
 
 });
