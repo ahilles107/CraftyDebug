@@ -325,6 +325,7 @@ Crafty.bind('Load', function () {
 
         $('#crafty-debug #entities-box .properties .content').html('');
         $('#crafty-debug #entities-box .options .content').html('');
+        $('#crafty-debug #entities-box .components .content').html('');
     });
 
 });
