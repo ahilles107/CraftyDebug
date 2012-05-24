@@ -233,7 +233,7 @@ Crafty.bind('Load', function () {
         $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities($(this).val())));
     });
 
-    $('#crafty-debug ul.menu li.entities').click(function(){
+    $('#crafty-debug ul.menu li.entities').live('click',function(){
         if ($('#entities-box').is(':visible')) {
             $('#entities-box').hide();
             $('#entities-box .options .content').hide();
