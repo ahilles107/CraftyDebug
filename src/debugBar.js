@@ -223,110 +223,103 @@ Crafty.extend({
     }
 });
 
-Crafty.bind('Load', function () {
-    /* Entities mangement */
-    setTimeout(function(){
+$('#entities-search').keyup(function(){
+    $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities($(this).val())));
+});
+
+$('#crafty-debug ul.menu li.entities').live('click',function(){
+    if ($('#entities-box').is(':visible')) {
+        $('#entities-box').hide();
+        $('#entities-box .options .content').hide();
+    } else {
+        $('#entities-box').show();
         $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities('*')));
-    }, 1000);
+        $('#entities-box .options .content').show();
+    }
+});
 
-    $('#entities-search').keyup(function(){
-        $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities($(this).val())));
-    });
+$('#crafty-debug #entities-box .list ul li a').live('click', function(){
+    Crafty.debugBar.renders.renderEntityDetails(Crafty($(this).data('ent')));
+});
 
-    $('#crafty-debug ul.menu li.entities').live('click',function(){
-        if ($('#entities-box').is(':visible')) {
-            $('#entities-box').hide();
-            $('#entities-box .options .content').hide();
-        } else {
-            $('#entities-box').show();
-            $('#entities-box .options .content').show();
-        }
-    });
+$('#crafty-debug #entities-box .components ul li a.remove').live('click', function(){
+    var component = $(this).data('comp'),
+        entity = $(this).data('entityId');
+    Crafty(entity).removeComponent(component, false);
+    Crafty.debugBar.renders.renderEntityComponents(Crafty(entity));
+});
 
-    $('#crafty-debug #entities-box .list ul li a').live('click', function(){
-        Crafty.debugBar.renders.renderEntityDetails(Crafty($(this).data('ent')));
-    });
+/* Components mangement */
+$('#crafty-debug #entities-box .components .addComponent').live('click', function(){
+    Crafty.debugBar.utils.addEntityComponent(this);
+});
 
-    $('#crafty-debug #entities-box .components ul li a.remove').live('click', function(){
-        var component = $(this).data('comp'),
-            entity = $(this).data('entityId');
-        Crafty(entity).removeComponent(component, false);
-        Crafty.debugBar.renders.renderEntityComponents(Crafty(entity));
-    });
+$('#crafty-debug #entities-box .components input.search').keypress(function(event) {
+    if ( event.which == 13 ) {
+        event.preventDefault();
+        Crafty.debugBar.utils.addEntityComponent($('#crafty-debug #entities-box .components .addComponent'));
+    }        
+});
 
-    /* Components mangement */
-    $('#crafty-debug #entities-box .components .addComponent').live('click', function(){
-        Crafty.debugBar.utils.addEntityComponent(this);
-    });
+/* Attributes mangement */
+$('#crafty-debug #entities-box .properties .content input').live('keyup', function(){
+    var attr = $(this).attr('name'),
+        entity = $(this).parent().parent();
+    
+    Crafty(entity.data('ent')).attr(attr, Crafty.debugBar.utils.elementToTypedValue($(this)));
+});
 
-    $('#crafty-debug #entities-box .components input.search').keypress(function(event) {
-        if ( event.which == 13 ) {
-            event.preventDefault();
-            Crafty.debugBar.utils.addEntityComponent($('#crafty-debug #entities-box .components .addComponent'));
-        }        
-    });
+/* Options mangement */
+$('#crafty-debug #entities-box .options .draggable').live('click', function(){
+    var id = $(this).parent().data('ent'),
+        entity = Crafty(id),
+        btn = $(this);
 
-    /* Attributes mangement */
-    $('#crafty-debug #entities-box .properties .content input').live('keyup', function(){
-        var attr = $(this).attr('name'),
-            entity = $(this).parent().parent();
-        
-        Crafty(entity.data('ent')).attr(attr, Crafty.debugBar.utils.elementToTypedValue($(this)));
-    });
+    if (btn.hasClass('off')){
+        entity.removeComponent('Draggable', false);
+        btn.removeClass('off');
+        btn.html('draggable on');
+        entity.unbind('Dragging');
+    } else {
+        entity.addComponent('Draggable');
+        btn.addClass('off');
+        btn.html('draggable off');
 
-    /* Options mangement */
-    $('#crafty-debug #entities-box .options .draggable').live('click', function(){
-        var id = $(this).parent().data('ent'),
-            entity = Crafty(id),
-            btn = $(this);
+        entity.bind('Dragging', function(e) {
+            Crafty.debugBar.renders.renderEntityAttributes(entity);
+        })
+    }
 
-        if (btn.hasClass('off')){
-            entity.removeComponent('Draggable', false);
-            btn.removeClass('off');
-            btn.html('draggable on');
-            entity.unbind('Dragging');
-        } else {
-            entity.addComponent('Draggable');
-            btn.addClass('off');
-            btn.html('draggable off');
+    Crafty.debugBar.renders.renderEntityComponents(entity);
+});
 
-            entity.bind('Dragging', function(e) {
-                Crafty.debugBar.renders.renderEntityAttributes(entity);
-            })
-        }
+$('#crafty-debug #entities-box .options .visible').live('click', function(){
+    var id = $(this).parent().data('ent'),
+        entity = Crafty(id),
+        btn = $(this);
+    if (btn.hasClass('off')){
+        entity.visible = true;
+        btn.removeClass('off');
+        btn.html('hide');
+    } else {
+        entity.visible = false;
+        btn.addClass('off');
+        btn.html('show');
+    } 
+});
 
-        Crafty.debugBar.renders.renderEntityComponents(entity);
-    });
+$('#crafty-debug #entities-box .options .console').live('click', function(){
+    var entity = $(this).parent().data('ent');
+    console.log(Crafty(entity));
+});
 
-    $('#crafty-debug #entities-box .options .visible').live('click', function(){
-        var id = $(this).parent().data('ent'),
-            entity = Crafty(id),
-            btn = $(this);
-        if (btn.hasClass('off')){
-            entity.visible = true;
-            btn.removeClass('off');
-            btn.html('hide');
-        } else {
-            entity.visible = false;
-            btn.addClass('off');
-            btn.html('show');
-        } 
-    });
+$('#crafty-debug #entities-box .options .remove').live('click', function(){
+    var entity = $(this).parent().data('ent');
+    Crafty(entity).destroy();
+    $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities('*')));
 
-    $('#crafty-debug #entities-box .options .console').live('click', function(){
-        var entity = $(this).parent().data('ent');
-        console.log(Crafty(entity));
-    });
-
-    $('#crafty-debug #entities-box .options .remove').live('click', function(){
-        var entity = $(this).parent().data('ent');
-        Crafty(entity).destroy();
-        $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities('*')));
-
-        $('#crafty-debug #entities-box .properties .content').html('');
-        $('#crafty-debug #entities-box .options .content').html('');
-        $('#crafty-debug #entities-box .components .content').html('');
-    });
-
+    $('#crafty-debug #entities-box .properties .content').html('');
+    $('#crafty-debug #entities-box .options .content').html('');
+    $('#crafty-debug #entities-box .components .content').html('');
 });
 
