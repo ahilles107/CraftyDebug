@@ -19,7 +19,7 @@
     "jsfiddle" : "disable",
     "homepage": "http://craftycomponents.com",
     "files": [
-        "src/panels/entities.js",
-        "src/debugBar.js"
+        "panels/entities.js",
+        "debugBar.js"
     ]
 }
