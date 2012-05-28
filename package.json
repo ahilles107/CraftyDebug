@@ -1,6 +1,6 @@
 {
     "name": "crafty-debug-bar",
-    "version": "0.8.2",
+    "version": "0.8.3",
     "title": "Debug bar for Crafty games",
     "author": {
         "name": "Fly With Monkey",
@@ -19,7 +19,7 @@
     "jsfiddle" : "disable",
     "homepage": "http://craftycomponents.com",
     "files": [
-        "panels/entities.js",
-        "debugBar.js"
+        "debugBar.js",
+        "panels/entities.js"
     ]
 }
