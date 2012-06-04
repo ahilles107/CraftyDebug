@@ -179,6 +179,7 @@
             $('#entities-box').hide();
             $('#entities-box .options .content').hide();
         } else {
+            $('.panel-box').hide();
             $('#entities-box').show();
             $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities('*')));
             $('#entities-box .options .content').show();
