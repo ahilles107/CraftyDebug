@@ -20,6 +20,7 @@
     "homepage": "https://github.com/ahilles107/CraftyDebug",
     "files": [
         "src/debugBar.js",
-        "src/panels/entities.js"
+        "src/panels/entities.js",
+        "src/panels/assets.js"
     ]
 }
