@@ -1,8 +1,8 @@
 (function(){
 
     var styles =    '#crafty-debug #assets-box{position: fixed;left: 110px;bottom: 35px;height: 200px;border: 1px solid #2F2F2F;display: none;background-color: white;border-bottom: 0px;padding-right: 10px;}\n'+
-                    '#crafty-debug #assets-box .list{height: 165px;width: 160px; float:left}\n'+
-                    '#crafty-debug #assets-box .list ul{color: #2F2F2F; height: 150px;width: 145px;overflow-y: scroll;padding-left: 5px;list-style-type: none;padding-right: 10px;font-size: 11px;margin-top: 0px;padding-top: 5px;}\n'+
+                    '#crafty-debug #assets-box .list{height: 165px;width: 200px; float:left}\n'+
+                    '#crafty-debug #assets-box .list ul{color: #2F2F2F; height: 150px;width: 195px;overflow-y: scroll;padding-left: 5px;list-style-type: none;padding-right: 10px;font-size: 11px;margin-top: 0px;padding-top: 5px;}\n'+
                     '#crafty-debug #assets-box .list ul li a{padding: 3px 0px 3px 0px;border-bottom: 1px dashed #BBB;color: #2F2F2F; display:block; text-decoration: none}\n'
                     ;
     var assetsBox =   '<div id="assets-box" class="panel-box">'+
@@ -44,4 +44,4 @@
         'panelBox' : assetsBox,
     });
 
-})()
+})();

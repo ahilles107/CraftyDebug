@@ -300,4 +300,4 @@
         'panelBox' : entitiesBox,
     });
 
-})()
+})();
