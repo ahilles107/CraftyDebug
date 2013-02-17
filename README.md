@@ -3,15 +3,15 @@ Crafty DebugBar
 
 With Crafty DebugBar you can create your games faster.
 
-##What You can do with Crafty DebugBar?
- * view human readable entities list
- * change attributes for choosen entity
+##What can I do with Crafty DebugBar?
+ * view a human readable entities list
+ * change the attributes of a choosen entity
  * manage entity (add/remove) components 
- * easly print entity object in browser console.
- * show/hide entity
- * make entity draggable, move entity and read new position atributes
+ * easily print entity objects in the browser console
+ * show/hide entities
+ * make an entity draggable, move an entity and read the new position's attributes
 
-##How You can use this
+##How can you use this?
 
 ```javascript
 Crafty.modules({ 'crafty-debug-bar': 'release' }, function () {
@@ -19,14 +19,14 @@ Crafty.modules({ 'crafty-debug-bar': 'release' }, function () {
 });
 ```
 
-##What will come?
- * entities selector (like in firebug)
- * easy show entity hitboxes polygons
- * performance grap (entities number, draw time)
- * pause/play, frames forward
- * current browser information, browser support
- * loaded assets (images, sounds)
- * sprites management
+##Plans for future relases
+ * entity selector (like in firebug)
+ * easily show entity hitbox polygons
+ * performance graph (entity numbers, drawing time)
+ * pause/play, fast-forward
+ * current browser and browser support information
+ * list of loaded assets (images, sounds)
+ * sprite management
 
-##How it look?
+##How does it look?
 ![Crafty DebugBar](http://dl.dropbox.com/u/141331/debugbar.PNG)
