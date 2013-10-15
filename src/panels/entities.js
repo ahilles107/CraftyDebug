@@ -170,11 +170,11 @@
 
     /*********** Events ***********/
 
-    $('#entities-search').live('keyup',function(){
+    $('#entities-search').on('keyup',function(){
         $('#entities-box-list').html(Crafty.debugBar.renders.renderEntitesList(Crafty.debugBar.utils.listEntities($(this).val())));
     });
 
-    $('#crafty-debug ul.menu li.entities').live('click',function(){
+    $('#crafty-debug ul.menu li.entities').on('click',function(){
         if ($('#entities-box').is(':visible')) {
             $('#entities-box').hide();
             $('#entities-box .options .content').hide();
@@ -186,11 +186,11 @@
         }
     });
 
-    $('#crafty-debug #entities-box .list ul li a').live('click', function(){
+    $('#crafty-debug #entities-box .list ul li a').on('click', function(){
         Crafty.debugBar.renders.renderEntityDetails(Crafty($(this).data('ent')));
     });
 
-    $('#crafty-debug #entities-box .components ul li a.remove').live('click', function(){
+    $('#crafty-debug #entities-box .components ul li a.remove').on('click', function(){
         var component = $(this).data('comp'),
             entity = $(this).data('entityId');
         Crafty(entity).removeComponent(component, false);
@@ -198,11 +198,11 @@
     });
 
     /* Components mangement */
-    $('#crafty-debug #entities-box .components .addComponent').live('click', function(){
+    $('#crafty-debug #entities-box .components .addComponent').on('click', function(){
         Crafty.debugBar.utils.addEntityComponent(this);
     });
 
-    $('#crafty-debug #entities-box .components input.search').live('keypress', function(event) {
+    $('#crafty-debug #entities-box .components input.search').on('keypress', function(event) {
         if ( event.which == 13 ) {
             event.preventDefault();
             Crafty.debugBar.utils.addEntityComponent($('#crafty-debug #entities-box .components .addComponent'));
@@ -210,7 +210,7 @@
     });
 
     /* Attributes mangement */
-    $('#crafty-debug #entities-box .properties .content input').live('keyup', function(){
+    $('#crafty-debug #entities-box .properties .content input').on('keyup', function(){
         var attr = $(this).attr('name'),
             entity = $(this).parent().parent();
         
@@ -218,7 +218,7 @@
     });
 
     /* Options mangement */
-    $('#crafty-debug #entities-box .options .visible').live('click', function(){
+    $('#crafty-debug #entities-box .options .visible').on('click', function(){
         var id = $(this).parent().data('ent'),
             entity = Crafty(id),
             btn = $(this);
@@ -234,7 +234,7 @@
         } 
     });
 
-    $('#crafty-debug #entities-box .options .draggable').live('click', function(){
+    $('#crafty-debug #entities-box .options .draggable').on('click', function(){
         var id = $(this).parent().data('ent'),
             entity = Crafty(id),
             btn = $(this);
@@ -257,7 +257,7 @@
         Crafty.debugBar.renders.renderEntityComponents(entity);
     });
 
-    $('#crafty-debug #entities-box .options .hitBox').live('click', function(){
+    $('#crafty-debug #entities-box .options .hitBox').on('click', function(){
         var id = $(this).parent().data('ent'),
             entity = Crafty(id),
             btn = $(this);
@@ -275,12 +275,12 @@
         Crafty.debugBar.renders.renderEntityComponents(entity);
     });
 
-    $('#crafty-debug #entities-box .options .console').live('click', function(){
+    $('#crafty-debug #entities-box .options .console').on('click', function(){
         var entity = $(this).parent().data('ent');
         console.log(Crafty(entity));
     });
 
-    $('#crafty-debug #entities-box .options .remove').live('click', function(){
+    $('#crafty-debug #entities-box .options .remove').on('click', function(){
         var entity = $(this).parent().data('ent');
         Crafty(entity).destroy();
 
