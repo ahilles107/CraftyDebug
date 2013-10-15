@@ -22,7 +22,7 @@
 
     /*********** Events ***********/
 
-    $('#crafty-debug ul.menu li.assets').live('click',function(){
+    $('#crafty-debug ul.menu li.assets').on('click',function(){
         if ($('#assets-box').is(':visible')) {
             $('#assets-box').hide();
         } else {
