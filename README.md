@@ -28,5 +28,5 @@ Crafty.modules({ 'crafty-debug-bar': 'release' }, function () {
  * loaded assets (images, sounds)
  * sprites management
 
-##How it look?
-![Crafty DebugBar](http://dl.dropbox.com/u/141331/debugbar.PNG)
+##How does it look?
+![Crafty DebugBar](./example/web/images/debugbar.PNG)
